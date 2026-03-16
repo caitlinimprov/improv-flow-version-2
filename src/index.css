@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Fredoka:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 260 30% 8%;
+    --foreground: 180 60% 95%;
+
+    --card: 260 25% 12%;
+    --card-foreground: 180 60% 95%;
+
+    --popover: 260 25% 12%;
+    --popover-foreground: 180 60% 95%;
+
+    --primary: 325 90% 60%;
+    --primary-foreground: 260 30% 8%;
+
+    --secondary: 180 80% 45%;
+    --secondary-foreground: 260 30% 8%;
+
+    --muted: 260 20% 18%;
+    --muted-foreground: 260 15% 55%;
+
+    --accent: 50 95% 58%;
+    --accent-foreground: 260 30% 8%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 260 20% 22%;
+    --input: 260 20% 22%;
+    --ring: 325 90% 60%;
+
+    --radius: 1rem;
+
+    --glow-primary: 0 0 30px hsl(325 90% 60% / 0.3), 0 0 60px hsl(325 90% 60% / 0.1);
+    --glow-secondary: 0 0 30px hsl(180 80% 45% / 0.3), 0 0 60px hsl(180 80% 45% / 0.1);
+    --glow-accent: 0 0 30px hsl(50 95% 58% / 0.25);
+    --gradient-bg: linear-gradient(180deg, hsl(260 30% 6%) 0%, hsl(270 25% 10%) 50%, hsl(260 30% 8%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(260 25% 15%) 0%, hsl(260 25% 10%) 100%);
+    --gradient-hero-text: linear-gradient(135deg, hsl(325 90% 65%) 0%, hsl(50 95% 58%) 50%, hsl(180 80% 50%) 100%);
+    --gradient-neon-border: linear-gradient(135deg, hsl(325 90% 60%), hsl(180 80% 45%), hsl(50 95% 58%));
+
+    --font-display: 'Bungee Shade', cursive;
+    --font-body: 'Fredoka', sans-serif;
+
+    --sidebar-background: 260 25% 10%;
+    --sidebar-foreground: 180 60% 95%;
+    --sidebar-primary: 325 90% 60%;
+    --sidebar-primary-foreground: 260 30% 8%;
+    --sidebar-accent: 260 20% 18%;
+    --sidebar-accent-foreground: 180 60% 95%;
+    --sidebar-border: 260 20% 22%;
+    --sidebar-ring: 325 90% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    background-image: var(--gradient-bg);
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-body);
+    font-weight: 700;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-body {
+    font-family: var(--font-body);
+  }
+  .text-gradient-hero {
+    background: var(--gradient-hero-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .glow-primary {
+    box-shadow: var(--glow-primary);
+  }
+  .glow-secondary {
+    box-shadow: var(--glow-secondary);
+  }
+  .glow-accent {
+    box-shadow: var(--glow-accent);
+  }
+  .bg-card-gradient {
+    background: var(--gradient-card);
+  }
+  .border-neon {
+    border-image: var(--gradient-neon-border) 1;
+  }
+  .bg-retro-grid {
+    background-image:
+      linear-gradient(hsl(260 20% 18% / 0.5) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(260 20% 18% / 0.5) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .bg-spotlight {
+    background-image: radial-gradient(ellipse at 50% 0%, hsl(325 90% 60% / 0.06) 0%, transparent 60%);
+  }
+}
