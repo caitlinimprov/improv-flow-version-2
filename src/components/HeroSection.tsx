@@ -53,9 +53,6 @@ const HeroSection = () => (
         Care quickly.
       </p>
       <QuoteRotator />
-      <p className="font-mono-editorial text-xs text-foreground/40 max-w-xl mx-auto mb-10 leading-relaxed tracking-wide">
-        Get loose. Stay sharp. Make it meaningful.
-      </p>
       <div className="flex gap-4 justify-center flex-wrap">
         <a href="#games" className="inline-flex items-center px-8 py-4 bg-primary text-white font-display text-xl tracking-widest hover:bg-white hover:text-black transition-colors border-2 border-primary">
           EXPLORE GAMES
