@@ -18,7 +18,7 @@ const Index = () => {
       <TipsSection />
       <footer className="py-12 px-6 text-center border-t-2 border-border">
         <p className="text-muted-foreground text-sm font-medium">
-          Made with chaos & 💖 — <span className="font-display text-primary text-lg">IMPRO</span>
+          Made with chaos & 💖 — <span className="font-display text-primary text-lg">BUNNY BUNNY</span>
         </p>
       </footer>
     </div>

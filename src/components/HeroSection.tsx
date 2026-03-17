@@ -57,14 +57,14 @@ const HeroSection = () => (
     {/* Content */}
     <div className="relative z-10 text-center px-6 max-w-3xl mx-auto">
       <p className="text-secondary font-bold text-sm tracking-[0.3em] uppercase mb-6 animate-fade-up">
-        ✨ The Art of Making Stuff Up ✨
+        🐰 A training tool for improvisers
       </p>
       <h1 className="font-display text-5xl sm:text-6xl md:text-8xl text-gradient-hero leading-[1.1] mb-6 animate-fade-up" style={{ animationDelay: "100ms" }}>
-        IMPRO
+        BUNNY BUNNY
       </h1>
       <QuoteRotator />
       <p className="text-lg md:text-xl text-foreground/70 max-w-xl mx-auto mb-10 animate-fade-up leading-relaxed font-medium" style={{ animationDelay: "250ms" }}>
-        Games, shows, chaos & good vibes. Embrace the beautiful mess of making it up as you go. 🎤
+        Get loose. Stay sharp. Make it meaningful. 
       </p>
       <div className="animate-fade-up flex gap-4 justify-center flex-wrap" style={{ animationDelay: "300ms" }}>
         <a
