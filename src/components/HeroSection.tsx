@@ -27,7 +27,7 @@ const QuoteRotator = () => {
   const q = quotes[index];
   return (
     <div className={"mb-8 transition-opacity duration-400 " + (fade ? "opacity-100" : "opacity-0")}>
-      <p className="font-mono-editorial text-xs max-w-md mx-auto leading-relaxed text-foreground/60 italic">
+      <p className="font-mono-editorial text-xs max-w-md leading-relaxed text-foreground/70 italic">
         "{q.text}"
       </p>
       <p className="font-mono-editorial text-xs mt-2 text-primary font-bold tracking-widest uppercase">— {q.author}</p>
@@ -36,30 +36,31 @@ const QuoteRotator = () => {
 };
 
 const HeroSection = () => (
-  <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-background border-b-2 border-primary">
-    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_hsl(330_100%_45%_/_0.08)_0%,_transparent_70%)]"></div>
-    <div className="relative z-10 text-center px-6 max-w-5xl mx-auto w-full">
-      <p className="font-mono-editorial text-xs tracking-[0.5em] uppercase mb-4 text-primary">
+  <section className="relative min-h-[90vh] flex items-center justify-start overflow-hidden bg-background border-b-2 border-primary px-6">
+    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_hsl(330_100%_45%_/_0.06)_0%,_transparent_60%)]"></div>
+    <div className="relative z-10 w-full max-w-6xl mx-auto">
+      <p className="font-mono-editorial text-xs tracking-[0.4em] uppercase mb-2 text-primary">
         — a training tool for improvisers —
       </p>
-      <h1 className="font-display block w-full text-[22vw] leading-none text-foreground uppercase">
+      <h1 className="font-display leading-none text-foreground uppercase w-full" style={{fontSize: "clamp(80px, 18vw, 220px)", display: "block"}}>
         BUNNY
       </h1>
-      <h1 className="font-display block w-full text-[22vw] leading-none text-primary uppercase mb-6">
+      <h1 className="font-display leading-none uppercase w-full" style={{fontSize: "clamp(80px, 18vw, 220px)", display: "block", WebkitTextStroke: "3px #E8007A", color: "transparent"}}>
         BUNNY
       </h1>
-      <div className="w-16 h-0.5 bg-primary mx-auto mb-6"></div>
-      <p className="font-mono-editorial text-base md:text-lg mb-6 text-foreground/90 tracking-widest uppercase">
-        Care quickly.
-      </p>
-      <QuoteRotator />
-      <div className="flex gap-4 justify-center flex-wrap">
-        <a href="#games" className="inline-flex items-center px-8 py-4 bg-transparent text-primary font-display text-xl tracking-widest hover:bg-primary hover:text-white transition-colors border-2 border-primary">
-          EXPLORE GAMES
-        </a>
-        <a href="#events" className="inline-flex items-center px-8 py-4 bg-transparent text-primary font-display text-xl tracking-widest hover:bg-primary hover:text-white transition-colors border-2 border-primary">
-          FIND EVENTS
-        </a>
+      <div className="mt-8 max-w-md">
+        <p className="font-mono-editorial text-sm md:text-base mb-6 text-foreground tracking-widest uppercase border-l-2 border-primary pl-4">
+          Care quickly.
+        </p>
+        <QuoteRotator />
+        <div className="flex gap-4 flex-wrap mt-6">
+          <a href="#games" className="inline-flex items-center px-8 py-4 bg-transparent text-primary font-display text-2xl tracking-widest hover:bg-primary hover:text-white transition-colors border-2 border-primary">
+            EXPLORE GAMES
+          </a>
+          <a href="#events" className="inline-flex items-center px-8 py-4 bg-transparent text-foreground font-display text-2xl tracking-widest hover:bg-primary hover:text-white transition-colors border-2 border-foreground/40">
+            FIND EVENTS
+          </a>
+        </div>
       </div>
     </div>
   </section>
