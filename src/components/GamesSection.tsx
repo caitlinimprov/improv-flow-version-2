@@ -19,10 +19,10 @@ const difficultyColor = {
 const GameCard = ({ title, description, players, difficulty, emoji, isHighlighted, cardRef }: GameCardProps & { isHighlighted?: boolean; cardRef?: React.Ref<HTMLDivElement> }) => (
   <div
     ref={cardRef}
-    className={`bg-card-gradient border-2 rounded-2xl p-6 transition-all duration-500 group ${
+    className={`bg-card-gradient border-2 rounded-none p-6 transition-all duration-500 group ${
       isHighlighted
-        ? "border-primary glow-primary scale-[1.03]"
-        : "border-border hover:border-primary/40 hover:-translate-y-1"
+        ? "border-primary scale-[1.03] shadow-[4px_4px_0px_#E8007A]"
+        : "border-foreground/30 hover:border-primary hover:shadow-[4px_4px_0px_#E8007A]"
     }`}
   >
     <div className="flex items-start justify-between mb-4">
@@ -95,7 +95,7 @@ const GamesSection = () => {
           <button
             onClick={pickRandom}
             disabled={isSpinning}
-            className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-primary text-primary-foreground font-bold text-sm hover:scale-105 transition-transform disabled:opacity-60 glow-primary"
+            className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-primary text-white font-display text-xl tracking-widest hover:bg-white hover:text-black transition-colors border-2 border-primary px-7 py-3.5 disabled:opacity-60"
           >
             <Shuffle size={18} className={isSpinning ? "animate-wiggle" : ""} />
             {isSpinning ? "Picking..." : "🎲 Random Game!"}
