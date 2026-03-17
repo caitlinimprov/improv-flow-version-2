@@ -2,11 +2,10 @@ import { useState, useEffect } from "react";
 import heroImage from "@/assets/hero-stage.jpg";
 
 const quotes = [
-  { text: "Say yes, and you'll figure it out afterwards.", author: "Tina Fey" },
+  { text: "Say yes, and you will figure it out afterwards.", author: "Tina Fey" },
   { text: "There are no mistakes, only opportunities.", author: "Amy Poehler" },
   { text: "Listen with the intent to be changed by what you hear.", author: "Chris Hines" },
   { text: "The fun is not knowing what happens next.", author: "Chris Alvarado" },
-  { text: "You can't be brave if you've only had wonderful things happen to you.", author: "Carla Cakowski" },
   { text: "Be the scene partner you wish you had.", author: "Amy Poehler" },
   { text: "Improvising is about being in the moment, not in your head.", author: "Tina Fey" },
 ];
@@ -28,56 +27,40 @@ const QuoteRotator = () => {
 
   const q = quotes[index];
   return (
-    <div className={`animate-fade-up mb-8 transition-opacity duration-400 ${fade ? "opacity-100" : "opacity-0"}`} style={{ animationDelay: "150ms" }}>
-      <p className="text-secondary/90 italic text-base md:text-lg max-w-md mx-auto leading-relaxed">
+    <div className={"mb-8 transition-opacity duration-400 " + (fade ? "opacity-100" : "opacity-0")}>
+      <p className="font-mono-editorial text-sm max-w-md mx-auto leading-relaxed text-foreground/70">
         "{q.text}"
       </p>
-      <p className="text-muted-foreground text-sm mt-1 font-bold">— {q.author}</p>
+      <p className="font-mono-editorial text-xs mt-2 text-primary font-bold">— {q.author}</p>
     </div>
   );
 };
 
 const HeroSection = () => (
-  <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-retro-grid">
-    {/* Background image */}
-    <div className="absolute inset-0">
-      <img
-        src={heroImage}
-        alt="Dramatic theater stage with warm spotlights"
-        className="w-full h-full object-cover opacity-20 mix-blend-screen"
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/30 to-background" />
-    </div>
-
-    {/* Floating shapes */}
-    <div className="absolute top-20 left-[10%] w-16 h-16 rounded-full bg-primary/15 blur-sm animate-float" />
-    <div className="absolute top-40 right-[15%] w-10 h-10 rounded-lg bg-secondary/20 blur-sm animate-float" style={{ animationDelay: "1s" }} />
-    <div className="absolute bottom-32 left-[20%] w-12 h-12 rounded-full bg-accent/15 blur-sm animate-float" style={{ animationDelay: "2s" }} />
-
-    {/* Content */}
-    <div className="relative z-10 text-center px-6 max-w-3xl mx-auto">
-      <p className="text-secondary font-bold text-sm tracking-[0.3em] uppercase mb-6 animate-fade-up">
-        🐰 A training tool for improvisers
+  <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-background border-b-4 border-foreground">
+    <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
+      <p className="font-mono-editorial text-xs tracking-[0.4em] uppercase mb-6 text-foreground/50">
+        A training tool for improvisers
       </p>
-      <h1 className="font-display text-5xl sm:text-6xl md:text-8xl text-gradient-hero leading-[1.1] mb-6 animate-fade-up" style={{ animationDelay: "100ms" }}>
-        BUNNY BUNNY
+      <h1 className="font-display text-[12vw] md:text-[10vw] font-black italic leading-none mb-2 text-foreground">
+        BUNNY
       </h1>
-      <QuoteRotator />
-      <p className="text-lg md:text-xl text-foreground/70 max-w-xl mx-auto mb-10 animate-fade-up leading-relaxed font-medium" style={{ animationDelay: "250ms" }}>
-        Get loose. Stay sharp. Make it meaningful. 
+      <h1 className="font-display text-[12vw] md:text-[10vw] font-black leading-none mb-6 text-primary">
+        BUNNY
+      </h1>
+      <p className="font-mono-editorial text-lg md:text-xl mb-8 text-foreground border-l-4 border-primary pl-4 text-left max-w-xs mx-auto">
+        Care quickly.
       </p>
-      <div className="animate-fade-up flex gap-4 justify-center flex-wrap" style={{ animationDelay: "300ms" }}>
-        <a
-          href="#games"
-          className="inline-flex items-center px-8 py-4 rounded-full bg-primary text-primary-foreground font-bold text-sm tracking-wide hover:scale-105 transition-transform glow-primary"
-        >
-          🎲 Explore Games
+      <QuoteRotator />
+      <p className="font-mono-editorial text-sm text-foreground/60 max-w-xl mx-auto mb-10 leading-relaxed">
+        Get loose. Stay sharp. Make it meaningful.
+      </p>
+      <div className="flex gap-4 justify-center flex-wrap">
+        <a href="#games" className="inline-flex items-center px-8 py-4 bg-primary text-white font-mono-editorial font-bold text-sm tracking-wide hover:bg-foreground transition-colors border-2 border-foreground">
+          Explore Games
         </a>
-        <a
-          href="#events"
-          className="inline-flex items-center px-8 py-4 rounded-full border-2 border-secondary text-secondary font-bold text-sm tracking-wide hover:bg-secondary hover:text-secondary-foreground transition-all"
-        >
-          📍 Find Events
+        <a href="#events" className="inline-flex items-center px-8 py-4 bg-transparent text-foreground font-mono-editorial font-bold text-sm tracking-wide hover:bg-foreground hover:text-background transition-colors border-2 border-foreground">
+          Find Events
         </a>
       </div>
     </div>
