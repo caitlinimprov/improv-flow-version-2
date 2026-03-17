@@ -12,13 +12,13 @@
     --card-foreground: 0 0% 96%;
     --primary: 330 100% 45%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 271 64% 45%;
+    --secondary: 271 64% 70%;
     --secondary-foreground: 0 0% 100%;
     --muted: 0 0% 12%;
     --muted-foreground: 0 0% 88%;
-    --accent: 271 64% 45%;
+    --accent: 271 64% 70%;
     --accent-foreground: 0 0% 100%;
-    --border: 0 0% 20%;
+    --border: 0 0% 35%;
     --input: 0 0% 12%;
     --ring: 330 100% 45%;
     --radius: 0rem;
