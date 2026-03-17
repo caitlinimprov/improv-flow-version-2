@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import heroImage from "@/assets/hero-stage.jpg";
 
 const quotes = [
   { text: "Say yes, and you will figure it out afterwards.", author: "Tina Fey" },
@@ -28,39 +27,41 @@ const QuoteRotator = () => {
   const q = quotes[index];
   return (
     <div className={"mb-8 transition-opacity duration-400 " + (fade ? "opacity-100" : "opacity-0")}>
-      <p className="font-mono-editorial text-sm max-w-md mx-auto leading-relaxed text-foreground/70">
+      <p className="font-mono-editorial text-xs max-w-md mx-auto leading-relaxed text-foreground/60 italic">
         "{q.text}"
       </p>
-      <p className="font-mono-editorial text-xs mt-2 text-primary font-bold">— {q.author}</p>
+      <p className="font-mono-editorial text-xs mt-2 text-primary font-bold tracking-widest uppercase">— {q.author}</p>
     </div>
   );
 };
 
 const HeroSection = () => (
-  <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-background border-b-4 border-foreground">
-    <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-      <p className="font-mono-editorial text-xs tracking-[0.4em] uppercase mb-6 text-foreground/50">
-        A training tool for improvisers
+  <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-background border-b-2 border-primary">
+    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_hsl(330_100%_45%_/_0.08)_0%,_transparent_70%)]"></div>
+    <div className="relative z-10 text-center px-6 max-w-5xl mx-auto w-full">
+      <p className="font-mono-editorial text-xs tracking-[0.5em] uppercase mb-4 text-primary">
+        — a training tool for improvisers —
       </p>
-      <h1 className="font-display text-[12vw] md:text-[10vw] font-black italic leading-none mb-2 text-foreground">
+      <h1 className="font-display block w-full text-[22vw] leading-none text-foreground uppercase">
         BUNNY
       </h1>
-      <h1 className="font-display text-[12vw] md:text-[10vw] font-black leading-none mb-6 text-primary">
+      <h1 className="font-display block w-full text-[22vw] leading-none text-primary uppercase mb-6">
         BUNNY
       </h1>
-      <p className="font-mono-editorial text-lg md:text-xl mb-8 text-foreground border-l-4 border-primary pl-4 text-left max-w-xs mx-auto">
+      <div className="w-16 h-0.5 bg-primary mx-auto mb-6"></div>
+      <p className="font-mono-editorial text-base md:text-lg mb-6 text-foreground/90 tracking-widest uppercase">
         Care quickly.
       </p>
       <QuoteRotator />
-      <p className="font-mono-editorial text-sm text-foreground/60 max-w-xl mx-auto mb-10 leading-relaxed">
+      <p className="font-mono-editorial text-xs text-foreground/40 max-w-xl mx-auto mb-10 leading-relaxed tracking-wide">
         Get loose. Stay sharp. Make it meaningful.
       </p>
       <div className="flex gap-4 justify-center flex-wrap">
-        <a href="#games" className="inline-flex items-center px-8 py-4 bg-primary text-white font-mono-editorial font-bold text-sm tracking-wide hover:bg-foreground transition-colors border-2 border-foreground">
-          Explore Games
+        <a href="#games" className="inline-flex items-center px-8 py-4 bg-primary text-white font-display text-xl tracking-widest hover:bg-white hover:text-black transition-colors border-2 border-primary">
+          EXPLORE GAMES
         </a>
-        <a href="#events" className="inline-flex items-center px-8 py-4 bg-transparent text-foreground font-mono-editorial font-bold text-sm tracking-wide hover:bg-foreground hover:text-background transition-colors border-2 border-foreground">
-          Find Events
+        <a href="#events" className="inline-flex items-center px-8 py-4 bg-transparent text-primary font-display text-xl tracking-widest hover:bg-primary hover:text-white transition-colors border-2 border-primary">
+          FIND EVENTS
         </a>
       </div>
     </div>

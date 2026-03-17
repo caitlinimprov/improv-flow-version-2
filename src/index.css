@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Space+Mono:wght@0,400;0,700&family=Inter:wght@300;400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -6,20 +6,20 @@
 
 @layer base {
   :root {
-    --background: 45 20% 96%;
-    --foreground: 0 0% 8%;
-    --card: 40 15% 93%;
-    --card-foreground: 0 0% 8%;
+    --background: 0 0% 4%;
+    --foreground: 0 0% 96%;
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 96%;
     --primary: 330 100% 45%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 0 0% 8%;
-    --secondary-foreground: 45 20% 96%;
-    --muted: 40 10% 88%;
-    --muted-foreground: 0 0% 35%;
-    --accent: 330 100% 45%;
+    --secondary: 271 64% 45%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 55%;
+    --accent: 271 64% 45%;
     --accent-foreground: 0 0% 100%;
-    --border: 0 0% 15%;
-    --input: 40 10% 88%;
+    --border: 0 0% 20%;
+    --input: 0 0% 12%;
     --ring: 330 100% 45%;
     --radius: 0rem;
   }
@@ -27,17 +27,31 @@
 
 @layer base {
   * { @apply border-border; }
-  body { @apply bg-background text-foreground; font-family: 'Inter', sans-serif; }
-  h1, h2, h3 { font-family: 'Playfair Display', serif; }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Space Mono", monospace;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noise)' opacity='0.06'/%3E%3C/svg%3E");
+  }
+  h1, h2, h3 {
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 0.02em;
+  }
 }
 
 @layer utilities {
-  .font-display { font-family: 'Playfair Display', serif; }
-  .text-gradient-hero { color: hsl(0 0% 8%); }
-  .bg-card-gradient { background-color: hsl(40 15% 93%); }
-  .bg-retro-grid { background-color: hsl(45 20% 96%); }
-  .bg-spotlight { background-color: hsl(40 15% 93%); }
-  .glow-primary { box-shadow: 4px 4px 0px #000; }
+  .font-display { font-family: "Bebas Neue", sans-serif; letter-spacing: 0.02em; }
+  .font-mono-editorial { font-family: "Space Mono", monospace; }
+  .text-gradient-hero { color: hsl(330 100% 45%); }
+  .bg-card-gradient { background-color: hsl(0 0% 7%); }
+  .bg-retro-grid {
+    background-color: hsl(0 0% 4%);
+    background-image:
+      linear-gradient(hsl(330 100% 45% / 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(330 100% 45% / 0.05) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+  .bg-spotlight { background-color: hsl(0 0% 6%); }
+  .glow-primary { box-shadow: 0 0 20px hsl(330 100% 45% / 0.4), 4px 4px 0px hsl(330 100% 45%); }
   .animate-float { animation: float 6s ease-in-out infinite; }
   .animate-wiggle { animation: wiggle 0.3s ease-in-out infinite; }
   .animate-fade-up { animation: fadeUp 0.6s ease-out forwards; }
