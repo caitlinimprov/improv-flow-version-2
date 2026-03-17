@@ -83,9 +83,9 @@ const GamesSection = () => {
   return (
     <section className="py-24 px-6">
       <div className="container max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <p className="text-secondary font-bold text-sm tracking-widest uppercase mb-3">🎭 Explore</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+        <div className="mb-12">
+          <p className="font-mono-editorial text-xs tracking-widest uppercase mb-3 text-primary">🎭 explore</p>
+          <h2 className="font-display text-6xl md:text-8xl text-foreground mb-4 text-left">
             Improv Games & Exercises
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto mb-8">
