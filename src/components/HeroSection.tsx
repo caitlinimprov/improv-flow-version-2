@@ -58,14 +58,14 @@ const HeroSection = () => (
       <p className="font-mono-editorial text-xs tracking-[0.4em] uppercase mb-1 text-primary">
         — a training tool for improvisers —
       </p>
-      <h1 className="font-display leading-[0.85] text-foreground uppercase w-full" style={{fontSize: "clamp(80px, 18vw, 220px)"}}>
+      <h1 className="font-display leading-[0.82] text-foreground uppercase w-full" style={{fontSize: "clamp(80px, 18vw, 220px)"}}>
         BUNNY
       </h1>
-      <h1 className="font-display leading-[0.85] uppercase w-full mb-8" style={{fontSize: "clamp(80px, 18vw, 220px)", WebkitTextStroke: "4px #E8007A", color: "transparent"}}>
+      <h1 className="font-display leading-[0.82] uppercase w-full mb-4" style={{fontSize: "clamp(80px, 18vw, 220px)", WebkitTextStroke: "4px #E8007A", color: "transparent"}}>
         BUNNY
       </h1>
       <div className="mt-4 max-w-lg">
-        <p className="font-mono-editorial text-xl md:text-2xl mb-6 text-foreground tracking-widest uppercase border-l-4 border-primary pl-4" style={{transform: "rotate(-1deg)", display: "inline-block"}}>
+        <p className="font-mono-editorial text-2xl md:text-3xl mb-6 text-foreground tracking-widest uppercase border-l-4 border-primary pl-4" style={{transform: "rotate(-1deg)", display: "inline-block"}}>
           Care quickly.
         </p>
         <div className="mt-4">

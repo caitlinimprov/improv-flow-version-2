@@ -81,8 +81,8 @@ const ThisWeekSection = () => {
         <div className="mb-10">
           <p className="font-mono-editorial text-xs tracking-widest uppercase mb-2 text-primary">— this week —</p>
           <h2 className="font-display text-6xl md:text-8xl text-foreground leading-none mb-8">{WEEK.theme}</h2>
-          <div className="border-l-2 border-foreground/20 pl-6 max-w-2xl mb-10">
-            <p className="font-mono-editorial text-sm text-foreground/70 leading-relaxed">{WEEK.learn}</p>
+          <div className="border-l-2 border-primary/40 pl-6 max-w-2xl mb-10">
+            <p className="font-mono-editorial text-sm text-foreground/85 leading-relaxed">{WEEK.learn}</p>
           </div>
         </div>
 
@@ -110,6 +110,7 @@ const ThisWeekSection = () => {
           </div>
         )}
 
+        
         <p className="font-mono-editorial text-xs tracking-widest uppercase text-primary mb-4">— try something —</p>
         <div className="grid gap-3 mb-12">
           {WEEK.activities.map((activity: any) => {
