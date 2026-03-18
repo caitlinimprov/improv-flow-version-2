@@ -51,8 +51,7 @@ const ThisWeekSection = () => {
         <div className="mb-12">
           <p className="font-mono-editorial text-xs tracking-widest uppercase mb-2 text-primary">— this week —</p>
           <h2 className="font-display text-6xl md:text-8xl text-foreground leading-none mb-8">
-            {WEEK.theme.toUpperCase().replace(" ", "
-")}
+            {WEEK.theme.toUpperCase()}
           </h2>
           <div className="border-l-2 border-primary pl-6 max-w-2xl">
             <p className="font-mono-editorial text-sm text-foreground/80 leading-relaxed">{WEEK.learn}</p>
