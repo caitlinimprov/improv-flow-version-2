@@ -54,10 +54,7 @@ const HeroSection = () => (
         </p>
         <QuoteRotator />
         <div className="flex gap-4 flex-wrap mt-4">
-          <a href="#games" className="inline-flex items-center px-10 py-4 bg-transparent text-primary font-display text-2xl tracking-widest hover:bg-primary hover:text-white transition-colors border-2 border-primary">
-            EXPLORE GAMES
-          </a>
-          <a href="#events" className="inline-flex items-center px-10 py-4 bg-transparent text-foreground font-display text-2xl tracking-widest hover:bg-primary hover:text-white transition-colors border-2 border-foreground/50">
+          <a href="#events" className="inline-flex items-center px-10 py-4 bg-transparent text-primary font-display text-2xl tracking-widest hover:bg-primary hover:text-white transition-colors border-2 border-primary">
             FIND EVENTS
           </a>
         </div>
