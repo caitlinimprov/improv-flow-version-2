@@ -7,6 +7,7 @@ const WEEK = {
   number: 1,
   learn: "The hardest part of improv is not being funny. It is walking into the room. Del Close, the godfather of modern improv, used to say the only real mistake is not showing up. Every great improviser you have ever seen started by just walking through the door, having no idea what they were doing. That is the whole game. Show up. The rest figures itself out.",
   reward: { text: "The only rule is work.", author: "Corita Kent" },
+  fact: { stat: "1955", context: "The year Viola Spolin published the first improv exercises ever written down. Before that, nobody had a rulebook. Everyone was just showing up and figuring it out." },
   activities: [
     { id: "stranger", emoji: "🗣️", title: "Talk to a Stranger", description: "Strike up a 5-minute conversation with someone you don't usually talk to. No agenda. Just show up." },
     { id: "gibberish", emoji: "🤪", title: "1 Minute of Gibberish", description: "Speak total nonsense out loud for 60 seconds. Commit to the sounds. It frees up your brain." },

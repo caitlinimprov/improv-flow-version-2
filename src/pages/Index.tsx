@@ -11,7 +11,7 @@ const Index = () => {
       <EventsSection />
       <NotesSection />
       <footer className="py-12 px-6 border-t-2 border-foreground/20">
-        <p className="font-mono-editorial text-xs text-foreground/40 tracking-widest">
+        <p className="font-mono-editorial text-xs text-foreground/70 tracking-widest">
           LISTEN FIRST. MAKE STATEMENTS. EMBRACE FAILURE. BE STUPID. 🐰 BUNNY BUNNY.
         </p>
       </footer>
