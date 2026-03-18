@@ -4,6 +4,8 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    - cron: '0 12 * * 1'
 
 permissions:
   contents: read
@@ -23,6 +25,13 @@ jobs:
         with:
           node-version: 20
           cache: npm
+      - name: Install Python dependencies
+        run: pip install google-auth google-api-python-client
+      - name: Fetch this week content from Google Sheets
+        env:
+          GOOGLE_SHEETS_ID: ${{ secrets.GOOGLE_SHEETS_ID }}
+          GOOGLE_SERVICE_ACCOUNT: ${{ secrets.GOOGLE_SERVICE_ACCOUNT }}
+        run: python3 scripts/fetch_thisweek.py
       - run: npm ci
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3

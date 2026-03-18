@@ -1,3 +1,4 @@
+import WEEK from "@/data/thisweek.json";
 import { useState, useEffect } from "react";
 import { CheckCircle2, Circle, RotateCcw, Flame, Trophy } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
