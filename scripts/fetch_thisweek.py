@@ -41,13 +41,15 @@ def fetch_sheet_data():
             return None
             
         data = {
-            "week_number": int(live_row.get("week_number", 1)),
+            "number": int(live_row.get("week_number", 1)),
             "theme": live_row.get("theme", ""),
             "learn": live_row.get("learn", ""),
             "fact_stat": live_row.get("fact_stat", ""),
             "fact_context": live_row.get("fact_context", ""),
-            "reward_quote": live_row.get("reward_quote", ""),
-            "reward_author": live_row.get("reward_author", ""),
+            "reward": {
+                "text": live_row.get("reward_quote", ""),
+                "author": live_row.get("reward_author", "")
+            },
             "activities": []
         }
         

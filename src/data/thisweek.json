@@ -1,11 +1,13 @@
 {
-  "week_number": 1,
-  "theme": "SHOW UP",
+  "number": 1,
+  "theme": "SHOW UP TEST",
   "learn": "The hardest part of improv is not being funny. It is walking into the room. Del Close used to say the only real mistake is not showing up. Every great improviser started by just walking through the door with no idea what they were doing. That is the whole game. Show up. The rest figures itself out.",
   "fact_stat": "1955",
   "fact_context": "The year Viola Spolin published the first improv exercises ever written down. Before that nobody had a rulebook. Everyone was just showing up and figuring it out.",
-  "reward_quote": "The only rule is work.",
-  "reward_author": "Corita Kent",
+  "reward": {
+    "text": "The only rule is work.",
+    "author": "Corita Kent"
+  },
   "activities": [
     {
       "id": "stranger",
