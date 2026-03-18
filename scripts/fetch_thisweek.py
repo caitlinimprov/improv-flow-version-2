@@ -19,7 +19,7 @@ def fetch_sheet_data():
         service = discovery.build("sheets", "v4", credentials=creds)
         result = service.spreadsheets().values().get(
             spreadsheetId=SHEET_ID,
-            range="Sheet1!A:V"
+            range="bunny_bunny_content!A:V"
         ).execute()
         
         rows = result.get("values", [])
