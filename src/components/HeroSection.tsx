@@ -37,26 +37,44 @@ const QuoteRotator = () => {
 
 const HeroSection = () => (
   <section className="relative min-h-[90vh] flex items-center justify-start overflow-hidden bg-background border-b-2 border-primary px-6">
-    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_hsl(330_100%_45%_/_0.06)_0%,_transparent_60%)]"></div>
+    
+    {/* Grain texture overlay */}
+    <div className="absolute inset-0 opacity-[0.07]" style={{
+      backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
+      backgroundRepeat: 'repeat',
+      backgroundSize: '128px 128px'
+    }}></div>
+
+    {/* Pink radial glow */}
+    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_hsl(330_100%_45%_/_0.08)_0%,_transparent_60%)]"></div>
+
+    {/* Registration marks */}
+    <div className="absolute top-4 left-4 text-primary/30 font-mono-editorial text-xs">+</div>
+    <div className="absolute top-4 right-4 text-primary/30 font-mono-editorial text-xs">+</div>
+    <div className="absolute bottom-8 left-4 text-primary/30 font-mono-editorial text-xs">+</div>
+    <div className="absolute bottom-8 right-4 text-primary/30 font-mono-editorial text-xs">+</div>
+
     <div className="relative z-10 w-full max-w-6xl mx-auto">
       <p className="font-mono-editorial text-xs tracking-[0.4em] uppercase mb-1 text-primary">
         — a training tool for improvisers —
       </p>
-      <h1 className="font-display leading-[0.88] text-foreground uppercase w-full" style={{fontSize: "clamp(80px, 18vw, 220px)"}}>
+      <h1 className="font-display leading-[0.85] text-foreground uppercase w-full" style={{fontSize: "clamp(80px, 18vw, 220px)"}}>
         BUNNY
       </h1>
-      <h1 className="font-display leading-[0.88] uppercase w-full mb-8" style={{fontSize: "clamp(80px, 18vw, 220px)", WebkitTextStroke: "3px #E8007A", color: "transparent"}}>
+      <h1 className="font-display leading-[0.85] uppercase w-full mb-8" style={{fontSize: "clamp(80px, 18vw, 220px)", WebkitTextStroke: "4px #E8007A", color: "transparent"}}>
         BUNNY
       </h1>
-      <div className="mt-6 max-w-lg">
-        <p className="font-mono-editorial text-xl md:text-2xl mb-6 text-foreground tracking-widest uppercase border-l-4 border-primary pl-4">
+      <div className="mt-4 max-w-lg">
+        <p className="font-mono-editorial text-xl md:text-2xl mb-6 text-foreground tracking-widest uppercase border-l-4 border-primary pl-4" style={{transform: "rotate(-1deg)", display: "inline-block"}}>
           Care quickly.
         </p>
-        <QuoteRotator />
+        <div className="mt-4">
+          <QuoteRotator />
+        </div>
         <div className="flex gap-4 flex-wrap mt-4">
-          <a href="#events" className="inline-flex items-center px-10 py-4 bg-transparent text-primary font-display text-2xl tracking-widest hover:bg-primary hover:text-white transition-colors border-2 border-primary">
+          <button onClick={() => document.getElementById("events")?.scrollIntoView({behavior: "smooth"})} className="inline-flex items-center px-10 py-4 bg-transparent text-primary font-display text-2xl tracking-widest hover:bg-primary hover:text-white transition-colors border-2 border-primary">
             FIND EVENTS
-          </a>
+          </button>
         </div>
       </div>
     </div>
