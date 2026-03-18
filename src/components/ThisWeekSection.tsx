@@ -51,12 +51,6 @@ const ThisWeekSection = () => {
         <div className="mb-10">
           <p className="font-mono-editorial text-xs tracking-widest uppercase mb-2 text-primary">— this week —</p>
           <h2 className="font-display text-6xl md:text-8xl text-foreground leading-none mb-8">{WEEK.theme}</h2>
-          <div className="border-2 border-foreground/30 p-8 max-w-2xl mb-10 hover:border-primary transition-colors duration-300">
-            <p className="font-mono-editorial text-xs tracking-widest uppercase text-primary mb-4">— learn something —</p>
-            <p className="font-display text-8xl md:text-9xl text-foreground leading-none mb-4">{WEEK.fact.stat}</p>
-            <p className="font-mono-editorial text-sm text-foreground/80 leading-relaxed">{WEEK.fact.context}</p>
-          </div>
-
           <div className="border-l-2 border-foreground/20 pl-6 max-w-2xl mb-10">
             <p className="font-mono-editorial text-sm text-foreground/70 leading-relaxed">{WEEK.learn}</p>
           </div>
@@ -118,6 +112,13 @@ const ThisWeekSection = () => {
               </button>
             );
           })}
+        </div>
+
+
+        <div className="border-2 border-foreground/30 p-8 max-w-2xl mt-10 hover:border-primary transition-colors duration-300">
+          <p className="font-mono-editorial text-xs tracking-widest uppercase text-primary mb-4">— learn something —</p>
+          <p className="font-display text-8xl md:text-9xl text-foreground leading-none mb-4">{WEEK.fact.stat}</p>
+          <p className="font-mono-editorial text-sm text-foreground/80 leading-relaxed">{WEEK.fact.context}</p>
         </div>
 
       </div>
