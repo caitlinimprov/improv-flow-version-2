@@ -10,10 +10,11 @@ const Index = () => {
       <ThisWeekSection />
       <EventsSection />
       <NotesSection />
-      <footer className="py-12 px-6 border-t-2 border-foreground/20">
-        <p className="font-mono-editorial text-xs text-foreground/70 tracking-widest">
-          LISTEN FIRST. MAKE STATEMENTS. EMBRACE FAILURE. BE STUPID. 🐰 BUNNY BUNNY.
+      <footer className="py-16 px-6 border-t-2 border-primary/40 text-center">
+        <p className="font-mono-editorial text-xs text-foreground/60 tracking-[0.3em] uppercase">
+          Listen First. Make Statements. Embrace Failure. Be Stupid.
         </p>
+        <p className="font-display text-4xl text-primary mt-2">BUNNY BUNNY</p>
       </footer>
     </div>
   );

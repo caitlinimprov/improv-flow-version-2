@@ -1,20 +1,20 @@
 import { useState, useMemo } from "react";
-import { MapPin, Navigation, Calendar, Clock, ChevronDown, ChevronUp, Ticket } from "lucide-react";
+import { MapPin, Calendar, Clock, ChevronDown, ChevronUp, Ticket, Navigation } from "lucide-react";
 import { AVAILABLE_CITIES, SAMPLE_EVENTS, type City, type ImprovEvent } from "@/data/events";
 import { useLocationPreferences } from "@/hooks/useLocationPreferences";
 
 const typeStyles: Record<ImprovEvent["type"], string> = {
-  show: "bg-primary/20 text-primary",
-  workshop: "bg-secondary/20 text-secondary",
-  jam: "bg-accent/20 text-accent",
-  festival: "bg-green-500/20 text-green-400",
+  show: "text-primary border-primary",
+  workshop: "text-secondary border-secondary",
+  jam: "text-accent border-accent",
+  festival: "text-green-400 border-green-400",
 };
 
 const typeEmoji: Record<ImprovEvent["type"], string> = {
-  show: "🎤",
-  workshop: "🛠️",
-  jam: "🎵",
-  festival: "🎪",
+  show: "SHOW",
+  workshop: "WORKSHOP",
+  jam: "JAM",
+  festival: "FESTIVAL",
 };
 
 const EventCard = ({ event }: { event: ImprovEvent }) => {
@@ -22,19 +22,19 @@ const EventCard = ({ event }: { event: ImprovEvent }) => {
   const formatted = dateObj.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" });
 
   return (
-    <div className="bg-card-gradient border-2 border-border rounded-2xl p-5 hover:border-primary/40 transition-all duration-300 hover:-translate-y-0.5">
+    <div className="border-2 border-foreground/20 p-5 hover:border-primary transition-all duration-300">
       <div className="flex items-start justify-between mb-3">
-        <span className={`text-xs font-bold px-3 py-1 rounded-full capitalize ${typeStyles[event.type]}`}>
-          {typeEmoji[event.type]} {event.type}
+        <span className={"font-mono-editorial text-xs font-bold px-2 py-0.5 border " + typeStyles[event.type]}>
+          {typeEmoji[event.type]}
         </span>
-        <span className="text-accent font-bold text-sm">{event.price}</span>
+        <span className="font-mono-editorial text-xs text-primary font-bold">{event.price}</span>
       </div>
-      <h3 className="text-lg font-bold text-foreground mb-1">{event.title}</h3>
-      <p className="text-muted-foreground text-sm mb-3 leading-relaxed">{event.description}</p>
-      <div className="flex flex-wrap gap-3 text-xs text-muted-foreground font-medium">
-        <span className="flex items-center gap-1"><MapPin size={12} />{event.venue}</span>
-        <span className="flex items-center gap-1"><Calendar size={12} />{formatted}</span>
-        <span className="flex items-center gap-1"><Clock size={12} />{event.time}</span>
+      <h3 className="font-display text-2xl text-foreground mb-1">{event.title.toUpperCase()}</h3>
+      <p className="font-mono-editorial text-xs text-foreground/70 mb-3 leading-relaxed">{event.description}</p>
+      <div className="flex flex-wrap gap-3 font-mono-editorial text-xs text-foreground/50">
+        <span className="flex items-center gap-1"><MapPin size={10} />{event.venue}</span>
+        <span className="flex items-center gap-1"><Calendar size={10} />{formatted}</span>
+        <span className="flex items-center gap-1"><Clock size={10} />{event.time}</span>
       </div>
     </div>
   );
@@ -52,48 +52,40 @@ const EventsSection = () => {
   const displayedCities = showAllCities ? AVAILABLE_CITIES : AVAILABLE_CITIES.slice(0, 7);
 
   return (
-    <section id="events" className="py-24 px-6 bg-retro-grid">
+    <section id="events" className="py-20 px-6 border-t-2 border-foreground/20">
       <div className="container max-w-6xl mx-auto">
-        <div className="text-center mb-12">
-          <p className="text-primary font-bold text-sm tracking-widest uppercase mb-3">📍 Near You</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Improv Events & Shows
+        <div className="mb-10">
+          <p className="font-mono-editorial text-xs tracking-widest uppercase mb-2 text-primary">— near you —</p>
+          <h2 className="font-display text-6xl md:text-8xl text-foreground leading-none mb-4">
+            EVENTS
           </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">
-            Find improv shows, workshops, and open jams in your city. Pick your spots below!
-          </p>
         </div>
 
-        {/* Location controls */}
-        <div className="mb-10">
-          <div className="flex flex-wrap items-center gap-3 justify-center mb-4">
+        <div className="mb-8">
+          <div className="flex flex-wrap items-center gap-3 mb-4">
             <button
               onClick={detectLocation}
               disabled={detectingLocation}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border-2 border-secondary bg-secondary/10 text-secondary text-sm font-bold hover:bg-secondary/20 transition-colors disabled:opacity-50"
+              className="inline-flex items-center gap-2 px-5 py-2.5 border-2 border-primary text-primary font-mono-editorial text-xs font-bold hover:bg-primary hover:text-white transition-colors disabled:opacity-50"
             >
-              <Navigation size={14} className={detectingLocation ? "animate-spin" : ""} />
-              {detectingLocation ? "Detecting..." : "📡 Use My Location"}
+              <Navigation size={12} className={detectingLocation ? "animate-spin" : ""} />
+              {detectingLocation ? "detecting..." : "use my location"}
             </button>
             {detectedCity && (
-              <span className="text-muted-foreground text-sm font-medium">
-                📍 Detected: <span className="text-foreground font-bold">{detectedCity}</span>
+              <span className="font-mono-editorial text-xs text-foreground/60">
+                detected: <span className="text-foreground font-bold">{detectedCity}</span>
               </span>
             )}
           </div>
 
-          <div className="flex flex-wrap gap-2 justify-center">
+          <div className="flex flex-wrap gap-2">
             {displayedCities.map((city) => {
               const isSelected = selectedCities.includes(city);
               return (
                 <button
                   key={city}
                   onClick={() => toggleCity(city)}
-                  className={`px-4 py-2 rounded-full text-sm font-bold transition-all duration-200 border-2 ${
-                    isSelected
-                      ? "bg-primary text-primary-foreground border-primary glow-primary"
-                      : "bg-muted/50 text-foreground/70 border-border hover:border-primary/40"
-                  }`}
+                  className={"px-4 py-2 font-mono-editorial text-xs font-bold transition-all duration-200 border-2 " + (isSelected ? "bg-primary text-white border-primary" : "bg-transparent text-foreground/60 border-foreground/20 hover:border-primary hover:text-foreground")}
                 >
                   {city}
                 </button>
@@ -101,31 +93,30 @@ const EventsSection = () => {
             })}
             <button
               onClick={() => setShowAllCities(!showAllCities)}
-              className="px-4 py-2 rounded-full text-sm font-bold text-muted-foreground border-2 border-border hover:border-secondary/40 transition-colors flex items-center gap-1"
+              className="px-4 py-2 font-mono-editorial text-xs font-bold text-foreground/40 border-2 border-foreground/20 hover:border-primary transition-colors flex items-center gap-1"
             >
-              {showAllCities ? <>Less <ChevronUp size={14} /></> : <>More <ChevronDown size={14} /></>}
+              {showAllCities ? <>less <ChevronUp size={12} /></> : <>more <ChevronDown size={12} /></>}
             </button>
           </div>
 
           {selectedCities.length > 0 && (
-            <p className="text-center mt-4 text-muted-foreground text-sm font-medium">
-              Showing <span className="text-primary font-bold">{filteredEvents.length}</span> events in{" "}
-              <span className="text-foreground">{selectedCities.join(", ")}</span>
+            <p className="mt-4 font-mono-editorial text-xs text-foreground/50">
+              showing <span className="text-primary font-bold">{filteredEvents.length}</span> events in <span className="text-foreground">{selectedCities.join(", ")}</span>
             </p>
           )}
         </div>
 
         {filteredEvents.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {filteredEvents.map((event) => (
               <EventCard key={event.id} event={event} />
             ))}
           </div>
         ) : (
-          <div className="text-center py-16 text-muted-foreground">
-            <Ticket size={40} className="mx-auto mb-4 opacity-40" />
-            <p className="text-lg font-bold">No events found for your selected cities.</p>
-            <p className="text-sm mt-1">Try selecting different cities above!</p>
+          <div className="py-16 text-center">
+            <Ticket size={32} className="mx-auto mb-4 text-foreground/20" />
+            <p className="font-display text-3xl text-foreground/40">NO EVENTS FOUND</p>
+            <p className="font-mono-editorial text-xs text-foreground/30 mt-2">try selecting different cities above</p>
           </div>
         )}
       </div>

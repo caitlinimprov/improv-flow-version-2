@@ -3,11 +3,11 @@ import { CheckCircle2, Circle, RotateCcw, Flame, Trophy } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
 
 const WEEK = {
-  theme: "Show Up Week",
+  theme: "SHOW UP WEEK",
   number: 1,
   learn: "The hardest part of improv is not being funny. It is walking into the room. Del Close, the godfather of modern improv, used to say the only real mistake is not showing up. Every great improviser you have ever seen started by just walking through the door, having no idea what they were doing. That is the whole game. Show up. The rest figures itself out.",
-  reward: { text: "The only rule is work.", author: "Corita Kent" },
   fact: { stat: "1955", context: "The year Viola Spolin published the first improv exercises ever written down. Before that, nobody had a rulebook. Everyone was just showing up and figuring it out." },
+  reward: { text: "The only rule is work.", author: "Corita Kent" },
   activities: [
     { id: "stranger", emoji: "🗣️", title: "Talk to a Stranger", description: "Strike up a 5-minute conversation with someone you don't usually talk to. No agenda. Just show up." },
     { id: "gibberish", emoji: "🤪", title: "1 Minute of Gibberish", description: "Speak total nonsense out loud for 60 seconds. Commit to the sounds. It frees up your brain." },
@@ -41,7 +41,6 @@ const ThisWeekSection = () => {
   };
 
   const reset = () => { setCompleted([]); setShowReward(false); };
-
   const pct = Math.round((completed.length / WEEK.activities.length) * 100);
   const allDone = completed.length === WEEK.activities.length;
 
@@ -49,17 +48,21 @@ const ThisWeekSection = () => {
     <section className="py-20 px-6 border-t-2 border-foreground/20">
       <div className="container max-w-4xl mx-auto">
 
-        <div className="mb-12">
+        <div className="mb-10">
           <p className="font-mono-editorial text-xs tracking-widest uppercase mb-2 text-primary">— this week —</p>
-          <h2 className="font-display text-6xl md:text-8xl text-foreground leading-none mb-8">
-            {WEEK.theme.toUpperCase()}
-          </h2>
-          <div className="border-l-2 border-primary pl-6 max-w-2xl">
+          <h2 className="font-display text-6xl md:text-8xl text-foreground leading-none mb-8">{WEEK.theme}</h2>
+          <div className="border-l-2 border-primary pl-6 max-w-2xl mb-10">
             <p className="font-mono-editorial text-sm text-foreground/80 leading-relaxed">{WEEK.learn}</p>
+          </div>
+
+          <div className="border-2 border-foreground/30 p-8 max-w-2xl hover:border-primary transition-colors duration-300">
+            <p className="font-mono-editorial text-xs tracking-widest uppercase text-primary mb-4">— learn something —</p>
+            <p className="font-display text-8xl md:text-9xl text-foreground leading-none mb-4">{WEEK.fact.stat}</p>
+            <p className="font-mono-editorial text-sm text-foreground/80 leading-relaxed">{WEEK.fact.context}</p>
           </div>
         </div>
 
-        <div className="mb-8 border-2 border-foreground/20 p-6">
+        <div className="mb-6 border-2 border-foreground/20 p-6">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-3">
               {allDone ? <Trophy size={18} className="text-primary" /> : <Flame size={18} className="text-primary" />}
@@ -74,14 +77,19 @@ const ThisWeekSection = () => {
               </button>
             </div>
           </div>
-          <Progress value={pct} className="h-1 bg-foreground/10" />
+          <Progress value={pct} className="h-2 bg-foreground/10" />
+          {allDone && !showReward && (
+            <p className="font-mono-editorial text-xs text-primary mt-3 tracking-widest uppercase animate-pulse">
+              — loading your reward —
+            </p>
+          )}
         </div>
 
         {showReward && allDone && (
-          <div className="mb-8 border-2 border-primary p-6 bg-primary/5">
-            <p className="font-mono-editorial text-xs tracking-widest uppercase text-primary mb-4">— you showed up. all 7. —</p>
-            <p className="font-display text-4xl text-foreground mb-2">"{WEEK.reward.text}"</p>
-            <p className="font-mono-editorial text-xs text-primary tracking-widest uppercase">— {WEEK.reward.author}</p>
+          <div className="mb-8 border-2 border-primary p-8 bg-primary/5">
+            <p className="font-mono-editorial text-xs tracking-widest uppercase text-primary mb-6">— you showed up. all 7. —</p>
+            <p className="font-display text-5xl md:text-6xl text-foreground mb-4">"{WEEK.reward.text}"</p>
+            <p className="font-mono-editorial text-sm text-primary tracking-widest uppercase">— {WEEK.reward.author}</p>
           </div>
         )}
 
@@ -94,17 +102,17 @@ const ThisWeekSection = () => {
                 onClick={() => toggle(activity.id)}
                 className={"flex gap-4 items-start p-5 border-2 text-left transition-all duration-200 w-full " + (done ? "border-primary/40 bg-primary/5 opacity-70" : "border-foreground/20 hover:border-primary bg-transparent")}
               >
-                <span className="shrink-0 mt-0.5">
+                <span className="shrink-0 mt-1">
                   {done
-                    ? <CheckCircle2 size={22} className="text-primary" />
-                    : <Circle size={22} className="text-foreground/30" />
+                    ? <CheckCircle2 size={24} className="text-primary" />
+                    : <Circle size={24} className="text-foreground/40" />
                   }
                 </span>
                 <div className="flex-1 min-w-0">
                   <h3 className={"font-display text-2xl mb-1 " + (done ? "line-through text-foreground/40" : "text-foreground")}>
                     {activity.emoji} {activity.title.toUpperCase()}
                   </h3>
-                  <p className="font-mono-editorial text-xs text-foreground/60 leading-relaxed">{activity.description}</p>
+                  <p className="font-mono-editorial text-sm text-foreground/70 leading-relaxed">{activity.description}</p>
                 </div>
               </button>
             );
