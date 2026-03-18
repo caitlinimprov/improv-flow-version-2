@@ -72,8 +72,13 @@ def fetch_sheet_data():
 
 data = fetch_sheet_data()
 if data:
+    import os
+    print(f"Writing to: {os.path.abspath('src/data/thisweek.json')}")
+    print(f"Theme: {data['theme']}")
     with open("src/data/thisweek.json", "w") as f:
         json.dump(data, f, indent=2)
     print("Successfully updated thisweek.json")
+    with open("src/data/thisweek.json", "r") as f:
+        print("Verification read:", f.read()[:100])
 else:
     print("Using existing thisweek.json")
