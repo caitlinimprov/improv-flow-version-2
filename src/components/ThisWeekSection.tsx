@@ -3,7 +3,7 @@ import { CheckCircle2, Circle, RotateCcw, Flame, Trophy } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
 
 const WEEK = {
-  theme: "SHOW UP WEEK",
+  theme: "SHOW UP",
   number: 1,
   learn: "The hardest part of improv is not being funny. It is walking into the room. Del Close, the godfather of modern improv, used to say the only real mistake is not showing up. Every great improviser you have ever seen started by just walking through the door, having no idea what they were doing. That is the whole game. Show up. The rest figures itself out.",
   fact: { stat: "1955", context: "The year Viola Spolin published the first improv exercises ever written down. Before that, nobody had a rulebook. Everyone was just showing up and figuring it out." },
@@ -51,14 +51,14 @@ const ThisWeekSection = () => {
         <div className="mb-10">
           <p className="font-mono-editorial text-xs tracking-widest uppercase mb-2 text-primary">— this week —</p>
           <h2 className="font-display text-6xl md:text-8xl text-foreground leading-none mb-8">{WEEK.theme}</h2>
-          <div className="border-l-2 border-primary pl-6 max-w-2xl mb-10">
-            <p className="font-mono-editorial text-sm text-foreground/80 leading-relaxed">{WEEK.learn}</p>
-          </div>
-
-          <div className="border-2 border-foreground/30 p-8 max-w-2xl hover:border-primary transition-colors duration-300">
+          <div className="border-2 border-foreground/30 p-8 max-w-2xl mb-10 hover:border-primary transition-colors duration-300">
             <p className="font-mono-editorial text-xs tracking-widest uppercase text-primary mb-4">— learn something —</p>
             <p className="font-display text-8xl md:text-9xl text-foreground leading-none mb-4">{WEEK.fact.stat}</p>
             <p className="font-mono-editorial text-sm text-foreground/80 leading-relaxed">{WEEK.fact.context}</p>
+          </div>
+
+          <div className="border-l-2 border-foreground/20 pl-6 max-w-2xl mb-10">
+            <p className="font-mono-editorial text-sm text-foreground/70 leading-relaxed">{WEEK.learn}</p>
           </div>
         </div>
 
@@ -93,6 +93,7 @@ const ThisWeekSection = () => {
           </div>
         )}
 
+        <p className="font-mono-editorial text-xs tracking-widest uppercase text-primary mb-4">— try something —</p>
         <div className="grid gap-3">
           {WEEK.activities.map((activity) => {
             const done = completed.includes(activity.id);
