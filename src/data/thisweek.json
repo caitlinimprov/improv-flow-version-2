@@ -1,5 +1,5 @@
 {
-  "number": 1,
+  "number": 2,
   "theme": "SHOW UP TEST",
   "learn": "The hardest part of improv is not being funny. It is walking into the room. Del Close used to say the only real mistake is not showing up. Every great improviser started by just walking through the door with no idea what they were doing. That is the whole game. Show up. The rest figures itself out.",
   "fact_stat": "1955",
@@ -10,44 +10,44 @@
   },
   "activities": [
     {
-      "id": "stranger",
-      "emoji": "\ud83d\udde3\ufe0f",
+      "id": "activity_1",
+      "emoji": "\ud83c\udfad",
       "title": "Talk to a Stranger",
       "description": "Strike up a 5-minute conversation with someone you don't usually talk to. No agenda. Just show up."
     },
     {
-      "id": "gibberish",
-      "emoji": "\ud83e\udd2a",
+      "id": "activity_2",
+      "emoji": "\ud83c\udfad",
       "title": "1 Minute of Gibberish",
       "description": "Speak total nonsense out loud for 60 seconds. Commit to the sounds. It frees up your brain."
     },
     {
-      "id": "walks",
-      "emoji": "\ud83d\udeb6",
+      "id": "activity_3",
+      "emoji": "\ud83c\udfad",
       "title": "Character Walks",
       "description": "Walk as 3 different characters. Old, rushed, royalty. Notice how each walk changes how you feel."
     },
     {
-      "id": "yes",
-      "emoji": "\u2705",
+      "id": "activity_4",
+      "emoji": "\ud83c\udfad",
       "title": "Say Yes to Something",
       "description": "Say yes to something you would normally decline today. Small or big. Just say yes."
     },
     {
-      "id": "emotion",
+      "id": "activity_5",
       "emoji": "\ud83c\udfad",
       "title": "Emotion Replay",
       "description": "Retell something that happened today in a completely different emotion. Sad grocery trip? Furious breakfast?"
     },
     {
-      "id": "observe",
-      "emoji": "\ud83d\udc40",
+      "id": "activity_6",
+      "emoji": "\ud83c\udfad",
       "title": "People Watch",
       "description": "Sit somewhere public for 10 minutes. Pick a stranger and invent their entire backstory. The weirder the better."
     },
     {
-      "id": "embarrass",
-      "emoji": "\ud83d\ude2c",
+      "id": "activity_7",
+      "emoji": "\ud83c\udfad",
       "title": "Do Something Embarrassing",
       "description": "Do something slightly embarrassing on purpose alone. Dance in your kitchen. Talk to yourself on the street. Show up anyway."
     }
