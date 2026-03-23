@@ -39,11 +39,7 @@ const HeroSection = () => (
   <section className="relative min-h-[90vh] flex items-end justify-start overflow-hidden bg-background border-b-4 border-primary pb-12 px-4 md:px-8">
     
     {/* Grain texture */}
-    <div className="absolute inset-0 opacity-[0.08]" style={{
-      backgroundImage: "url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")",
-      backgroundRepeat: "repeat",
-      backgroundSize: "128px 128px"
-    }}></div>
+    <div className="absolute inset-0 opacity-[0.08]" style={{backgroundImage: `url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>")`, backgroundRepeat: "repeat", backgroundSize: "128px"}}></div>
 
     {/* Pink glow top left */}
     <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_hsl(330_100%_45%_/_0.1)_0%,_transparent_55%)]"></div>
