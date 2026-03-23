@@ -62,7 +62,7 @@ const HeroSection = () => (
         BUNNY
       </h1>
       <h1 className="font-display leading-[0.82] uppercase w-full mb-4 relative" style={{fontSize: "clamp(80px, 18vw, 220px)", WebkitTextStroke: "4px #E8007A", color: "transparent"}}>
-        BUNNY<a href="#bunny-note" className="text-primary absolute" style={{fontSize: "clamp(16px, 3vw, 36px)", top: "0.1em", WebkitTextStroke: "0px", color: "#E8007A"}}>*</a>
+        BUNNY<button onClick={() => document.getElementById("bunny-note")?.scrollIntoView({behavior: "smooth"})} className="text-primary absolute" style={{fontSize: "clamp(16px, 3vw, 36px)", top: "0.1em", WebkitTextStroke: "0px", color: "#E8007A", background: "none", border: "none", cursor: "pointer"}}>*</button>
       </h1>
       <div className="mt-4 max-w-lg">
         <p className="font-mono-editorial text-2xl md:text-3xl mb-6 text-foreground tracking-widest uppercase border-l-4 border-primary pl-4" style={{transform: "rotate(-1deg)", display: "inline-block"}}>
